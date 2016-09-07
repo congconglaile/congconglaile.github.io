@@ -84,12 +84,22 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://congconglaile.github.io/index.html">
+<meta name="description" content="概述HTML5 新增了一个非常重要的功能，可以在客户端本地保存数据的Web Storage功能，之前都是使用Cookies在客户端保存简单的用户信息，但是Cookies存在几个问题：
+（1）大小限制：Cookies的大小不能超过4KB（2）带宽：Cookies是随着HTTP请求一起发送到服务器，会占用一部分带宽（3）复杂性：Cookies在查询，修改时操作复杂。
+针对以上问题，HTML5中，重新提">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5 Web Storage">
+<meta property="og:url" content="https://congconglaile.github.io/2016/09/07/storage/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="概述HTML5 新增了一个非常重要的功能，可以在客户端本地保存数据的Web Storage功能，之前都是使用Cookies在客户端保存简单的用户信息，但是Cookies存在几个问题：
+（1）大小限制：Cookies的大小不能超过4KB（2）带宽：Cookies是随着HTTP请求一起发送到服务器，会占用一部分带宽（3）复杂性：Cookies在查询，修改时操作复杂。
+针对以上问题，HTML5中，重新提">
+<meta property="og:updated_time" content="2016-09-07T05:25:32.764Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="HTML5 Web Storage">
+<meta name="twitter:description" content="概述HTML5 新增了一个非常重要的功能，可以在客户端本地保存数据的Web Storage功能，之前都是使用Cookies在客户端保存简单的用户信息，但是Cookies存在几个问题：
+（1）大小限制：Cookies的大小不能超过4KB（2）带宽：Cookies是随着HTTP请求一起发送到服务器，会占用一部分带宽（3）复杂性：Cookies在查询，修改时操作复杂。
+针对以上问题，HTML5中，重新提">
 
 
 
@@ -110,9 +120,9 @@
 
 
 
-  <link rel="canonical" href="https://congconglaile.github.io/"/>
+  <link rel="canonical" href="https://congconglaile.github.io/2016/09/07/storage/"/>
 
-  <title> Hexo </title>
+  <title> HTML5 Web Storage | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -133,9 +143,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -212,9 +220,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -234,10 +242,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/09/07/storage/" itemprop="url">
-                  HTML5 Web Storage
-                </a>
+                HTML5 Web Storage
               
             
           </h1>
@@ -277,9 +282,7 @@
       
 
       
-        
-          
-            <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>HTML5 新增了一个非常重要的功能，可以在客户端本地保存数据的Web Storage功能，之前都是使用Cookies在客户端保存简单的用户信息，但是Cookies存在几个问题：</p>
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>HTML5 新增了一个非常重要的功能，可以在客户端本地保存数据的Web Storage功能，之前都是使用Cookies在客户端保存简单的用户信息，但是Cookies存在几个问题：</p>
 <p>（1）大小限制：Cookies的大小不能超过4KB<br>（2）带宽：Cookies是随着HTTP请求一起发送到服务器，会占用一部分带宽<br>（3）复杂性：Cookies在查询，修改时操作复杂。</p>
 <p>针对以上问题，HTML5中，重新提供了一种在客户端本地保存数据的功能——Web Storage。具体分为两种： sessionStorage 和 localStorage。几乎所有最新版的浏览器都支持 sessionStorage 和 localStorage存储，包括 IE 浏览器。</p>
 <p><strong>sessionStorage 和 localStorage 属于特定的源（协议+域名+端口），Web Storage每一个给定的源（given origin）维持一个独立的存储区域，例如<a href="http://www.abc.com" target="_blank" rel="external">http://www.abc.com</a>  和 <a href="http://www.def.com拥有属于自己的sessionStorage" target="_blank" rel="external">http://www.def.com拥有属于自己的sessionStorage</a> 和 localStorage。在某个源的脚本中无法操作其他源的sessionStorage 和 localStorage。<br>但是cookies只区分协议+域名， 不区分端口。同一协议+域名，不同端口会共享同一份cookies.例如<a href="http://www.abc.com:1000" target="_blank" rel="external">http://www.abc.com:1000</a>  和 <a href="http://www.abc.com:2000" target="_blank" rel="external">http://www.abc.com:2000</a> 会共享cookies。因此如果想要在同一域名不同端口下使用不同享cookies就要加标识来存储，才能保证查询修改时不会影响另外一个端口的数据。</strong></p>
@@ -323,16 +326,20 @@
 <p>参考：</p>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/sessionStorage" target="_blank" rel="external">MDN—Window.sessionStorage</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/cookie" target="_blank" rel="external">MDN—Document.cookie</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Storage_API" target="_blank" rel="external">MDN—Web Storage API</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Storage" target="_blank" rel="external">MDN—Storage</a></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -343,16 +350,15 @@
 
       
       
-        <div class="post-eof"></div>
-      
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -360,6 +366,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -379,8 +389,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -416,6 +435,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看"><span class="nav-number">2.</span> <span class="nav-text">查看</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">3.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage-和-localStorage"><span class="nav-number">3.1.</span> <span class="nav-text">localStorage 和 localStorage</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区别"><span class="nav-number">4.</span> <span class="nav-text">区别</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -512,6 +542,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
