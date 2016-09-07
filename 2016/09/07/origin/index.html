@@ -84,12 +84,22 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://congconglaile.github.io/index.html">
+<meta name="description" content="什么是跨域网络中能请求到的都是资源，例如 图片，音乐，网页的HTML文件，css文件，请求资源需要统一资源定位符（URL）。
+跨域是指，来自B域试图操作A域的资源。简单举个栗子：来自域B的js脚本不可以通过AJAX请求来获取A域的资源。那么怎么才算是不同域呢？
+完整的URL包括协议（http、ftp等）、域名（IP）、端口、路径例如：URL  http://www.baidu.com:80/ind">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨域解决方法">
+<meta property="og:url" content="https://congconglaile.github.io/2016/09/07/origin/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="什么是跨域网络中能请求到的都是资源，例如 图片，音乐，网页的HTML文件，css文件，请求资源需要统一资源定位符（URL）。
+跨域是指，来自B域试图操作A域的资源。简单举个栗子：来自域B的js脚本不可以通过AJAX请求来获取A域的资源。那么怎么才算是不同域呢？
+完整的URL包括协议（http、ftp等）、域名（IP）、端口、路径例如：URL  http://www.baidu.com:80/ind">
+<meta property="og:updated_time" content="2016-09-07T07:39:46.487Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="跨域解决方法">
+<meta name="twitter:description" content="什么是跨域网络中能请求到的都是资源，例如 图片，音乐，网页的HTML文件，css文件，请求资源需要统一资源定位符（URL）。
+跨域是指，来自B域试图操作A域的资源。简单举个栗子：来自域B的js脚本不可以通过AJAX请求来获取A域的资源。那么怎么才算是不同域呢？
+完整的URL包括协议（http、ftp等）、域名（IP）、端口、路径例如：URL  http://www.baidu.com:80/ind">
 
 
 
@@ -110,9 +120,9 @@
 
 
 
-  <link rel="canonical" href="https://congconglaile.github.io/"/>
+  <link rel="canonical" href="https://congconglaile.github.io/2016/09/07/origin/"/>
 
-  <title> Hexo </title>
+  <title> 跨域解决方法 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -133,9 +143,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -212,9 +220,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -234,10 +242,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/09/07/origin/" itemprop="url">
-                  跨域解决方法
-                </a>
+                跨域解决方法
               
             
           </h1>
@@ -277,9 +282,7 @@
       
 
       
-        
-          
-            <h1 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h1><p>网络中能请求到的都是资源，例如 图片，音乐，网页的HTML文件，css文件，请求资源需要统一资源定位符（URL）。</p>
+        <h1 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h1><p>网络中能请求到的都是资源，例如 图片，音乐，网页的HTML文件，css文件，请求资源需要统一资源定位符（URL）。</p>
 <p>跨域是指，来自<strong>B域试图操作A域的资源</strong>。简单举个栗子：来自域B的js脚本不可以通过AJAX请求来获取A域的资源。那么怎么才算是不同域呢？</p>
 <p>完整的URL包括协议（http、ftp等）、域名（IP）、端口、路径<br>例如：URL  <a href="http://www.baidu.com:80/index.html" target="_blank" rel="external">http://www.baidu.com:80/index.html</a><br>| 协议        | 域名   |  端口  |文件|<br>| :—-:  | :—-:   | :—-:  |:—-:  |<br>|  http://    | www.baidu.com |   :80     |index.html|<br><strong>只要 协议、域名、端口有一个不一样，就是跨域</strong>！</p>
 <p>注意：</p>
@@ -326,16 +329,20 @@ A站点服务器-&gt;客户端浏览器（属于A站点）: ④HTTP响应
 <h4 id="XMLHttpRequest2-0CORS"><a href="#XMLHttpRequest2-0CORS" class="headerlink" title="XMLHttpRequest2.0CORS"></a>XMLHttpRequest2.0CORS</h4><p>XMLHttpRequest2.0CORS相对来说是一项新的官方正统标准，所有的现代浏览器都允许使用这种方式跨域访问，需要 客户端请求头中设置HTTP request header ：cross-origin属性，被请求的站点设置相应的HTTP response header ： Access-Control-Allow-Origin即可。jQuery Ajax默认支持cross-origin属性，所以如果使用jQuery Ajax就无需额外来设置请求头，站点的后天代码只需设置允许那些站点的前台页面可以访问自己即可。</p>
 <p>参考:<br><a href="https://www.zhihu.com/question/20138568">知乎 - 为什么要禁止跨域的 Ajax 请求？</a><br><a href="https://blog.logicboost.com/2012/12/13/understanding-the-web-same-origin-policy-restrictions-purpose-and-workarounds/">Understanding the Web-Same Origin Policy, Restrictions, Purpose, and Workarounds</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage">window.postMessage</a><br><a href="http://enable-cors.org/">XMLHttpRequest2.0CORS</a><br><a href="http://kb.cnblogs.com/page/139725/">博客园 - 说说JSON和JSONP，也许你会豁然开朗</a><br><a href="http://justcoding.iteye.com/blog/1366102/">ITeye - AJAX 跨域请求-JSONP获取JSON数据</a></p>
 </script></p>
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -343,155 +350,32 @@ A站点服务器-&gt;客户端浏览器（属于A站点）: ④HTTP响应
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/09/07/storage/" rel="next" title="HTML5 Web Storage">
+                <i class="fa fa-chevron-left"></i> HTML5 Web Storage
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/09/07/storage/" itemprop="url">
-                  HTML5 Web Storage
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-09-07T13:07:49+08:00" content="2016-09-07">
-              2016-09-07
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>HTML5 新增了一个非常重要的功能，可以在客户端本地保存数据的Web Storage功能，之前都是使用Cookies在客户端保存简单的用户信息，但是Cookies存在几个问题：</p>
-<p>（1）大小限制：Cookies的大小不能超过4KB<br>（2）带宽：Cookies是随着HTTP请求一起发送到服务器，会占用一部分带宽<br>（3）复杂性：Cookies在查询，修改时操作复杂。</p>
-<p>针对以上问题，HTML5中，重新提供了一种在客户端本地保存数据的功能——Web Storage。具体分为两种： sessionStorage 和 localStorage。几乎所有最新版的浏览器都支持 sessionStorage 和 localStorage存储，包括 IE 浏览器。</p>
-<p><strong>sessionStorage 和 localStorage 属于特定的源（协议+域名+端口），Web Storage每一个给定的源（given origin）维持一个独立的存储区域，例如<a href="http://www.abc.com" target="_blank" rel="external">http://www.abc.com</a>  和 <a href="http://www.def.com拥有属于自己的sessionStorage" target="_blank" rel="external">http://www.def.com拥有属于自己的sessionStorage</a> 和 localStorage。在某个源的脚本中无法操作其他源的sessionStorage 和 localStorage。<br>但是cookies只区分协议+域名， 不区分端口。同一协议+域名，不同端口会共享同一份cookies.例如<a href="http://www.abc.com:1000" target="_blank" rel="external">http://www.abc.com:1000</a>  和 <a href="http://www.abc.com:2000" target="_blank" rel="external">http://www.abc.com:2000</a> 会共享cookies。因此如果想要在同一域名不同端口下使用不同享cookies就要加标识来存储，才能保证查询修改时不会影响另外一个端口的数据。</strong></p>
-<hr>
-<h2 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h2><p>若查看某域的这三者的信息，可以在浏览器控制台中查看（F12 &gt; 选择console控制台）</p>
-<blockquote>
-<ul>
-<li>cookies：document.cookie</li>
-<li>localStorage: localStorage</li>
-<li>sessionStorage: sessionStorage</li>
-</ul>
-</blockquote>
-<p>以下是在chrome中查看的结果，火狐，IE也类似。</p>
-<p>在chrome中还可以在resource中查看，修改，删除</p>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="localStorage-和-localStorage"><a href="#localStorage-和-localStorage" class="headerlink" title="localStorage 和 localStorage"></a>localStorage 和 localStorage</h3><p>sessionStorage 和 localStorage是Storage类的两个实例，自然也具有Storage类的属性和方法。以下操作将Storage换成localStorage或者sessionStorage即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//只读属性，获取存储数据的条数</div><div class="line">Storage.length</div><div class="line">//该方法接受一个数值 n 作为参数，并返回存储中的第 n 个键名。</div><div class="line">Storage.key()</div><div class="line">//该方法接受一个键名作为参数，返回键名对应的值。</div><div class="line">Storage.getItem()</div><div class="line">//该方法接受一个键名和值作为参数，将会把键值对添加到存储中，如果键名存在，则更新其对应的值。    </div><div class="line">Storage.setItem()</div><div class="line">//该方法接受一个键名作为参数，并把该键名从存储中删除。    </div><div class="line">Storage.removeItem()</div><div class="line">//调用该方法会清空存储中的所有键名。     </div><div class="line">Storage.clear()</div><div class="line">```   </div><div class="line"></div><div class="line">此外sessionStorage 和 localStorage也可以像普通JS对象一样进行操作：</div></pre></td></tr></table></figure>
-<p>//相当于setItem()<br>localStorage.userId = ‘123456’;<br>//相当于getItem()<br>var userId = localStorage.userId；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### cookies</div></pre></td></tr></table></figure></p>
-<p>//返回一个字符串，其中包含了以分号分隔的cookie列表字符串 (即key=value键值对)<br>document.cookie;</p>
-<p>//写一个新cookie,updatedCookie是一个键值对形式的字符串。注意，你只能用这个方法一次设置或更新一个cookie。<br>document.cookie = updatedCookie;<br>//举个栗子<br>document.cookie = “name=oeschger”;<br>document.cookie = “favorite_food=tripe”;<br>alert(document.cookie);// 显示: name=oeschger;favorite_food=tripe</p>
-<p>//得到名为test2的cookie<br>document.cookie = “test1=Hello”;<br>document.cookie = “test2=World”;<br>var myCookie = document.cookie.replace(/(?:(?:^|.<em>;\s</em>)test2\s<em>\=\s</em>([^;]<em>).</em>$)|^.*$/, “$1”);<br>alert(myCookie);// 显示: World<br>```</p>
-<p>从以上操作过程可以看出，cookies操作真的很麻烦。没有sessionStorage 和 localStorage简介直观。</p>
-<hr>
-<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><ol>
-<li>cookies数据始终在同源的http请求中携带（即使不需要），即cookies在浏览器和服务器间来回传递。而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。cookies数据还有路径（path）的概念，可以限制cookies只属于某个路径下。</li>
-<li>存储大小限制也不同，cookies数据不能超过4k，同时因为每次http请求都会携带cookies，所以cookies只适合保存很小的数据，如会话标识。sessionStorage和localStorage 虽然也有存储大小的限制，但比cookies大得多，可以达到5M或更大。</li>
-<li><p>数据有效期不同：</p>
-<blockquote>
-<ul>
-<li>sessionStorage表示一个页面会话，sessionStorage 里面的数据在<strong>页面会话结束</strong>时会被清除。页面会话在浏览器打开期间一直保持，并且重新加载或恢复页面仍会保持原来的页面会话，在当前页面打开同源的新页面（<a>链接打开，或者window.open打开）也会保持原来的页面会话。但是在新标签或窗口打开一个页面会初始化一个新的会话；</a></li>
-<li>localStorage：始终有效，窗口或浏览器关闭也一直保存，即使关机也存在，除非用户手动删除；</li>
-<li>cookies如果设置的有效时间，在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭，如果没有设置有效时间，那cookies的生命周期就在应用结束（一般为浏览器关闭）的时候结束。<strong>注意</strong>：浏览器的cookies和服务的session计时方式不一样，session是从无操作开始计时，cookies是从cookies文件生成开始计时。<br>(1) 在当前页面刷新<br>(2) 从当前页面打开一个同源新窗口（<a>或者window.open()）<br>(3) 打开一个新窗口，输入同源的URL<br>(4) 关闭该源下所有的页面，再重新打开<br>sessionStorage有效范围(1)(2)<br>localStorage有效范围(1)(2)(3)(4)<br>cookies如果不设置有效时间，有效范围是(1)(2)(3)</a></li>
-</ul>
-</blockquote>
-</li>
-<li><p>作用域不同，sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面；localStorage 在所有同源窗口中都是共享的；cookie也是在所有同源窗口中都是共享的。</p>
-</li>
-<li>Web Storage 支持事件通知机制，可以将数据更新的通知发送给监听者。</li>
-<li>Web Storage 的 api 接口使用更方便。</li>
-</ol>
-<hr>
-<p>参考：</p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/sessionStorage" target="_blank" rel="external">MDN—Window.sessionStorage</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/cookie" target="_blank" rel="external">MDN—Document.cookie</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Storage_API" target="_blank" rel="external">MDN—Web Storage API</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Storage" target="_blank" rel="external">MDN—Storage</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -499,6 +383,10 @@ A站点服务器-&gt;客户端浏览器（属于A站点）: ④HTTP响应
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -518,8 +406,17 @@ A站点服务器-&gt;客户端浏览器（属于A站点）: ④HTTP响应
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -555,6 +452,17 @@ A站点服务器-&gt;客户端浏览器（属于A站点）: ④HTTP响应
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是跨域"><span class="nav-number">1.</span> <span class="nav-text">什么是跨域</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么禁止跨域"><span class="nav-number">2.</span> <span class="nav-text">为什么禁止跨域</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#同源策略"><span class="nav-number">2.1.</span> <span class="nav-text">同源策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM同源策略"><span class="nav-number">2.1.1.</span> <span class="nav-text">DOM同源策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XmlHttpRequest同源策略"><span class="nav-number">2.1.2.</span> <span class="nav-text">XmlHttpRequest同源策略</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#跨域解决方法"><span class="nav-number">3.</span> <span class="nav-text">跨域解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#后台代码中设置代理"><span class="nav-number">3.0.1.</span> <span class="nav-text">后台代码中设置代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如果A站点允许其他站点可以通过AJAX来访问自己，则可以利用JSONP和-XMLHttpRequest2-0CORS来解决跨域"><span class="nav-number">3.0.2.</span> <span class="nav-text">如果A站点允许其他站点可以通过AJAX来访问自己，则可以利用JSONP和 XMLHttpRequest2.0CORS来解决跨域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSONP"><span class="nav-number">3.0.2.1.</span> <span class="nav-text">JSONP</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -651,6 +559,10 @@ A站点服务器-&gt;客户端浏览器（属于A站点）: ④HTTP响应
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
